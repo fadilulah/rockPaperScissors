@@ -7,32 +7,57 @@ function getHumanChoice(){
     let humanChoiceToLower = humanChoice.toLowerCase()
     return humanChoiceToLower
 }
+let human = `human wins you `
+let computer = `computer wins`
+let draw = `it's a draw you and the computer entered the same value`
+let invalid = `please enter a valid selection`
+
 function playRound(computerSelection,humanSelection){
-    let human = `human wins you `
-    let computer = `computer wins`
+    
    if (humanSelection === computerSelection){
-    return (`it's a draw you and the computer entered the same value`)
+    return draw
    }
    else if (humanSelection === `rock` && computerSelection===`scissors`){
-    return human + `rock beats scissors`
+    return human
    }
    else if (humanSelection === `rock` && computerSelection===`paper`){
-    return computer + `paper beats rock`
+    return computer
    }
    else if (humanSelection === `paper` && computerSelection===`scissors`){
-    return computer + `scissors beats paper`
+    return computer
    }
    else if (humanSelection === `paper` && computerSelection===`rock`){
-    return human + `paper beats rock`
+    return human
    }
    else if (humanSelection === `scissors` && computerSelection===`rock`){
-    return computer + `rock beats scissors`
+    return computer
    }
    else if (humanSelection === `scissors` && computerSelection===`paper`){
-    return human + `scissors beats paper`
+    return human
+   }
+   else if (humanSelection === ``){
+    return invalid
    }
    else{
-    return (`you have entered an invalid selection`)
+    return invalid
    }
 }
-console.log(playRound(getComputerChoice(),getHumanChoice()))
+
+function game(){
+    let humanCounter = 0
+    let computerCounter =0
+    var arr = []
+    for (let i = 0; i < 5; i++) {
+        let roundOne=playRound(getComputerChoice(),getHumanChoice())
+        if (roundOne===human){
+            humanCounter++
+        }
+        else if(roundOne===computer){
+            computerCounter++
+        }
+        arr.push(roundOne);
+    }
+    return [arr,computerCounter,humanCounter]
+
+}
+console.log(game())
