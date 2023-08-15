@@ -45,19 +45,19 @@ function playRound(computerSelection,humanSelection){
 
 function game(){
     let humanCounter = 0
-    let computerCounter =0
+    let computerCounter = 0
     var arr = []
     for (let i = 0; i < 5; i++) {
-        let roundOne=playRound(getComputerChoice(),getHumanChoice())
-        if (roundOne===human){
+        let round=playRound(getComputerChoice(),getHumanChoice())
+        if (round===human){
             humanCounter++
         }
-        else if(roundOne===computer){
+        else if(round===computer){
             computerCounter++
         }
-        arr.push(roundOne);
+        arr.push(round);
     }
-    return [arr,computerCounter,humanCounter]
+    return [arr.toString(),computerCounter,humanCounter].toString()
 
 }
 console.log(game())
