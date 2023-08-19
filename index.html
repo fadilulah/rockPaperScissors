@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="maincontainer">
+        <div class="header"><h1>HUMANS vs COMPUTER</h1></div>
+
+        <div class="instruction">The fate of the human-race depends on you now select your weapon and save the human-race </div>
+
+        <div class="container">
+            <div class="rock button">
+                <img src="stone.png" alt="rock" class="rock-img">
+            </div>
+            <div class="paper button">
+                <img src="file.png" alt="paper">
+            </div>
+            <div class="scissors button">
+                <img src="scissors.png" alt="scissors">
+            </div>
+        </div>
+
+        <div class="counters">
+            <div class="human-counter">HUMANS SCORE: <span class="human-count">0</span></div>
+            <div class="computer-counter">COMPUTERS SCORE: <span class="computer-count">0</span></div>
+        </div>
+        <div class="roundwinner"></div>
+        <div class="final-winner"></div>
+        <div class="play"></div>
+    </div>
     
+    <div class="footer">
+        &copy; Fad 2023
+    </div>
 </body>
 </html>
